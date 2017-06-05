@@ -1,0 +1,13 @@
+div {
+    width: 150px;
+    height: 150px;
+    background-color:red;
+    border: 1px solid black;
+    margin: 10px;
+    text-align: center;
+    float: left;
+}
+
+button {
+    display: none;
+}
