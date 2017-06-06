@@ -14,14 +14,14 @@ $(document).ready(function() {
 
             if(visible_list[0] === visible_list[1]){
                 visible_imgs.each(function(index, element){
-                    $(this).parent().remove();
-                    $(this).remove();
+                    $(this).parent().attr('class','guessed');
+                    $(this).fadeOut();
 
                 });
             }else{
                 visible_imgs.each(function(index, element){
                     if($(this).hasClass('visible')){
-                        $(this).toggleClass('hidden visible');
+                        $(this).toggleClass('hidden visible', 800);
                         };
                 });
             };
@@ -30,6 +30,6 @@ $(document).ready(function() {
             visible_list = ['',''];
 
         };
-        console.log(visible_imgs);
+
     });
 });
