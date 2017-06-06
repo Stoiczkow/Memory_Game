@@ -1,13 +1,13 @@
 $(document).ready(function() {
     var counter = 0;
+    var visible_list = ['',''];
+
     $('div').on('click', function(){
         $(this).children().toggleClass('hidden visible');
         counter ++;
-        console.log(counter);
+
         if(counter == 2){
             var visible_imgs = $('img.visible');
-            var visible_list = ['',''];
-
             visible_imgs.each(function(index, element){
                 visible_list[index] = $(this).attr('class');
             });
@@ -20,12 +20,16 @@ $(document).ready(function() {
                 });
             }else{
                 visible_imgs.each(function(index, element){
-                    $(this).toggleClass('hidden');
+                    if($(this).hasClass('visible')){
+                        $(this).toggleClass('hidden visible');
+                        };
                 });
             };
 
             counter = 0;
+            visible_list = ['',''];
 
-        }
+        };
+        console.log(visible_imgs);
     });
 });
