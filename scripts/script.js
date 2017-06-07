@@ -2,18 +2,19 @@ $(document).ready(function() {
     var counter = 0;
     var visible_list = ['',''];
     var imgs = [];
+
     $('img').each(function(index, element){
         imgs.push(element);
     });
+
     var divs = $('div');
 
-    for(var i = 0; i < imgs.length; i++){
-        var index_of = Math.floor(Math.random() * (imgs.length + 1));
+    for(var i = 0; i < divs.length; i++){
+        var index_of = Math.floor(Math.random() * (imgs.length));
         divs[i].append(imgs[index_of]);
         imgs.splice(index_of,1);
     };
 
-    console.log(imgs);
     divs.on('click', function(){
         $(this).children().toggleClass('hidden visible');
         counter ++;
