@@ -6,11 +6,13 @@ div {
     margin: 10px;
     text-align: center;
     float: left;
+    border-radius:50%;
 }
 
 img {
     width: 150px;
     height: 150px;
+    border-radius:50%;
 }
 
 .hidden {
