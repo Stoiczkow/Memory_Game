@@ -15,14 +15,11 @@ $(document).ready(function() {
         imgs.splice(index_of,1);
     };
 
-
-    divs.on('click', function(){
+    function clicker(){
         $(this).children().toggleClass('hidden visible');
         counter ++;
-
+        console.log(counter);
         if(counter === 2){
-            divs.off('click');
-            console.log('zatrzymane klikanie kurwa');
             var visible_imgs = $('img.visible');
             visible_imgs.each(function(index, element){
                 visible_list[index] = $(this).attr('class');
@@ -47,7 +44,10 @@ $(document).ready(function() {
 
         };
 
-    });
+    };
 
+
+    divs.one('click', clicker);
 
 });
+
