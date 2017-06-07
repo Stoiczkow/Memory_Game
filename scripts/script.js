@@ -17,9 +17,10 @@ $(document).ready(function() {
 
     function clicker(){
         $(this).children().toggleClass('hidden visible');
+
         counter ++;
         console.log(counter);
-        if(counter === 2){
+        if(counter == 2){
             var visible_imgs = $('img.visible');
             visible_imgs.each(function(index, element){
                 visible_list[index] = $(this).attr('class');
@@ -41,7 +42,8 @@ $(document).ready(function() {
 
             counter = 0;
             visible_list = ['',''];
-
+            divs.off('click');
+            divs.one('click', clicker);
         };
 
     };
