@@ -29,6 +29,7 @@ $(document).ready(function() {
             if(visible_list[0] === visible_list[1]){
                 visible_imgs.each(function(index, element){
                     $(this).parent().attr('class','guessed');
+                    $(this).removeClass('visible');
                     $(this).fadeOut();
 
                 });
@@ -39,15 +40,15 @@ $(document).ready(function() {
                         };
                 });
             };
-
+            console.log(visible_list);
             counter = 0;
             visible_list = ['',''];
             divs.off('click');
             divs.one('click', clicker);
         };
 
-    };
 
+    };
 
     divs.one('click', clicker);
 
