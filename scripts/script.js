@@ -2,17 +2,23 @@ $(document).ready(function() {
     var counter = 0;
     var visible_list = ['',''];
     var imgs = [];
+    var end_counter = 0;
+    var btn = $('button');
+    var success = $('p');
+    var timer = 0;
+    var divs = $('div');
 
     $('img').each(function(index, element){
         imgs.push(element);
     });
 
-    var timer = 0;
+    btn.click(function() {
+        location.reload();
+    });
+
     var interval = setInterval(function() {
         timer++;
     }, 1000);
-
-    var divs = $('div');
 
     for(var i = 0; i < divs.length; i++){
         var index_of = Math.floor(Math.random() * (imgs.length));
@@ -35,8 +41,8 @@ $(document).ready(function() {
                     $(this).parent().attr('class','guessed');
                     $(this).removeClass('visible');
                     $(this).fadeOut();
-
                 });
+                end_counter ++;
             }else{
                 visible_imgs.each(function(index, element){
                     if($(this).hasClass('visible')){
@@ -49,9 +55,16 @@ $(document).ready(function() {
             divs.off('click');
             divs.one('click', clicker);
         };
-        console.log(timer);
+        console.log(end_counter);
+        if(end_counter == 2){
+            btn.toggleClass('hidden');
+            success.toggleClass('hidden');
+        };
 
     };
+
+
+
 
     divs.one('click', clicker);
 
