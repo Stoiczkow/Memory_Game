@@ -63,9 +63,6 @@ $(document).ready(function() {
 
     };
 
-
-
-
     divs.one('click', clicker);
 
 });
