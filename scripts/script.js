@@ -7,6 +7,11 @@ $(document).ready(function() {
         imgs.push(element);
     });
 
+    var timer = 0;
+    var interval = setInterval(function() {
+        timer++;
+    }, 1000);
+
     var divs = $('div');
 
     for(var i = 0; i < divs.length; i++){
@@ -19,7 +24,6 @@ $(document).ready(function() {
         $(this).children().toggleClass('hidden visible');
 
         counter ++;
-        console.log(counter);
         if(counter == 2){
             var visible_imgs = $('img.visible');
             visible_imgs.each(function(index, element){
@@ -40,13 +44,12 @@ $(document).ready(function() {
                         };
                 });
             };
-            console.log(visible_list);
             counter = 0;
             visible_list = ['',''];
             divs.off('click');
             divs.one('click', clicker);
         };
-
+        console.log(timer);
 
     };
 
