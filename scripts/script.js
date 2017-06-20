@@ -12,7 +12,7 @@ $(document).ready(function() {
     $('img').each(function(index, element){
         imgs.push(element);
     });
-
+    console.log(divs);
     btn.click(function() {
         location.reload();
     });
