@@ -6,6 +6,7 @@ $(document).ready(function() {
     var btn = $('button');
     var success = $('p');
     var timer = 0;
+    var clicks = 0;
     var divs = $('div');
 
     $('img').each(function(index, element){
@@ -29,6 +30,7 @@ $(document).ready(function() {
     function clicker(){
         $(this).children().toggleClass('hidden visible');
 
+        clicks ++;
         counter ++;
         if(counter == 2){
             var visible_imgs = $('img.visible');
@@ -59,6 +61,7 @@ $(document).ready(function() {
         if(end_counter == 2){
             btn.toggleClass('hidden');
             success.toggleClass('hidden');
+            $("span").append(timer);
         };
 
     };
